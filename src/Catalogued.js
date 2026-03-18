@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { odds, smallOdds } from "./Scores";
+import { FiRefreshCw } from 'react-icons/fi';   // or any refresh/reload icon you like
 
 /* ---------------- UTILS ---------------- */
 const sanitizeTeam = (value) => value.toLowerCase().replace(/[^a-z]/g, "");
@@ -16,6 +17,7 @@ const Homepage = () => {
   /* ---------------- FIXTURE & FLAGS ---------------- */
   const [fixture, setFixture] = useState(null);
   const [isSmallTeamMatch, setIsSmallTeamMatch] = useState(false);
+  const [smallTeamImpact, setSmallTeamImpact] = useState(false);
 
   /* ---------------- BASE & MAIN DEFICIT ---------------- */
   const [baseStake, setBaseStake] = useState(10000);
@@ -240,6 +242,7 @@ const handleSpecialWinA = (type) => {
 
   // First win path: clear the main bad deficit
   setBadGamesDeficit(0);
+  setSmallTeamImpact(true);
 
   // Clear this special's individual deficit
   setSpecialDeficits((prev) => ({ ...prev, [type]: 0 }));
@@ -284,7 +287,7 @@ const handleSpecialWinB = (type) => {
   }
 
   // Special handling when badGamesDeficit is already cleared (≤ 0)
-  if (badGamesDeficit <= 0) {
+  if (smallTeamImpact) {
     // Reset ALL individual special deficits to 0
     setSpecialDeficits({
       oneX: 0, twoX: 0, x2: 0, zeroGoals: 0, sixGoals: 0,
@@ -347,7 +350,30 @@ const handleSpecialWinB = (type) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-950 via-black to-red-900 text-white px-4 py-10">
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-extrabold text-red-500">Virtual EPL Strategy</h1>
+       <div className="flex items-center justify-center gap-6 flex-wrap">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-red-500 tracking-tight">
+      Virtual EPL Strategy
+    </h1>
+
+    <button
+      onClick={fetchAll}
+      className={`
+        flex items-center gap-2 px-5 py-3 
+        bg-gradient-to-r from-red-700 to-red-900 
+        hover:from-red-600 hover:to-red-800 
+        text-white font-semibold text-lg 
+        rounded-2xl shadow-lg 
+        transition-all duration-300 
+        transform hover:scale-105 active:scale-95
+        border border-red-500/30
+        disabled:opacity-50 disabled:cursor-not-allowed
+      `}
+    >
+      {/* Icon + Text */}
+      <FiRefreshCw className="w-5 h-5" /> {/* remove if no icon */}
+      Reload Data
+    </button>
+  </div>
         <p className="text-red-400 mt-2">
           {fixture
             ? isSmallTeamMatch
@@ -374,7 +400,7 @@ const handleSpecialWinB = (type) => {
               {specialKeys.map((key) => (
                 <button
                   key={key}
-                  onClick={() => badGamesDeficit > 0 ? handleSpecialWinA(key) : handleSpecialWinB(key)}
+                  onClick={() => !smallTeamImpact ? handleSpecialWinA(key) : handleSpecialWinB(key)}
                   disabled={!fixture || pendingSpecialStakes[key] === 0}
                   className="py-6 rounded-2xl bg-blue-600 text-white font-extrabold hover:bg-blue-500 transition"
                 >

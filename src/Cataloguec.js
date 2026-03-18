@@ -239,7 +239,7 @@ const GideonBanquetRSVP = () => {
             </p>
             <p className="text-md"><strong>Email us @:</strong> gideonshardinsouthjasspercamp@gmail.com</p>
             <p className="mt-4 text-3xl font-bold text-gold-400">The Gideons International</p>
-            <p className="text-sm mt-2 opacity-80">Placing God’s Word. Changing Lives.</p>
+            <p className="text-sm mt-2 opacity-80">Placing God’s Word. Changing chees.</p>
           </div>
         </div>
       </div>
