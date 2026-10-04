@@ -64,7 +64,7 @@ const GideonBanquetRSVP = () => {
           <div className="relative h-full flex items-center justify-center text-center px-6">
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
               <h1 className="text-5xl md:text-7xl font-bold text-gold-400 drop-shadow-2xl">
-                Christmas Banquet 2025
+                Pastors Banquet 2026
               </h1>
               <p className="text-2xl md:text-4xl mt-4 text-gold-300">Hardin / South Jasper Camp</p>
               <p className="text-xl md:text-2xl mt-2 text-white font-light">The Gideons International</p>
@@ -79,7 +79,7 @@ const GideonBanquetRSVP = () => {
             {/* HEADER CARD */}
             <div className="bg-gradient-to-r from-red-800 to-red-900 p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gold-300">You Are Cordially Invited</h2>
-              <p className="text-xl text-gold-100 mt-3">Thursday, December 11th, 2025 • 6:30 PM - 8:30 PM</p>
+              <p className="text-xl text-gold-100 mt-3">Thursday, October 15th, 2026 • 6:30 PM - 8:30 PM</p>
             </div>
 
             {/* INFO CARDS */}
@@ -87,17 +87,17 @@ const GideonBanquetRSVP = () => {
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">Calendar</div>
                 <h3 className="font-bold text-xl text-red-800">Date & Time</h3>
-                <p className="mt-2">Thursday<br/>11th December 2025<br/>6:30 PM - 8:30 PM</p>
+                <p className="mt-2">Thursday<br/>15th October 2026<br/>6:30 PM - 8:30 PM</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">Location</div>
                 <h3 className="font-bold text-xl text-red-800">Venue</h3>
-                <p className="mt-2 font-medium">First Baptist Church, (Event Hall)<br/>350 US-96 BUS, Silsbee<br/>TX 77656</p>
+                <p className="mt-2 font-medium">1015 South Pine Street<br/>Kountze<br/>TX 77657</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto bg-gold-100 rounded-full flex items-center justify-center mb-4">Bible</div>
                 <h3 className="font-bold text-xl text-red-800">Theme</h3>
-                <p className="mt-2 italic">"The Word Became Flesh"<br/>John 1:14</p>
+                <p className="mt-2 italic">"Partnering in the Gospel"<br/>Pastors Appreciation Banquet</p>
               </div>
             </div>
 
@@ -215,7 +215,7 @@ const GideonBanquetRSVP = () => {
               <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
                 className="p-16 bg-gradient-to-b from-green-600 to-green-800 text-center">
                 <h2 className="text-5xl md:text-6xl font-bold text-gold-300 mb-6">
-                  {partySize > 0 ? "See You on December 11th!" : "Thank You!"}
+                  {partySize > 0 ? "See You on October 15th!" : "Thank You!"}
                 </h2>
                 <p className="text-2xl text-gold-100">
                   {partySize === 1 && "We're excited to fellowship with you!"}
@@ -239,7 +239,7 @@ const GideonBanquetRSVP = () => {
             </p>
             <p className="text-md"><strong>Email us @:</strong> gideonshardinsouthjasspercamp@gmail.com</p>
             <p className="mt-4 text-3xl font-bold text-gold-400">The Gideons International</p>
-            <p className="text-sm mt-2 opacity-80">Placing God’s Word. Changing chees.</p>
+            <p className="text-sm mt-2 opacity-80">Placing God’s Word. Changing lives.</p>
           </div>
         </div>
       </div>
